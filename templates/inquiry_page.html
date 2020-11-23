@@ -7,24 +7,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- CSS,JSS,BOOTSTRAP CDN only -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/landing.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/inquiry.css' %}">
   <title>Tulong</title>
 </head>
 <body>
 
-<div class="container">
-  <div class="center-column">
-    <div class="item-row">
-      <div class="col">
-        <!-- <button type="button" " class="btn btn-danger mx-auto d-block btn-block">Rescuee</button> -->
-        <a class="btn btn-danger btn-block" href="{% url 'inquiry' %}">Rescuee</a>
+  <div class="signup-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+      {% csrf_token %}
+		<h2>Ask Help</h2>
+		<p class="hint-text"> Tell us your details </p>
+      <div class="form-group">
+          {{ form.name }}
+          {{ form.disaster }}
+          {{ form.location }}
+          {{ form.total }}
+          {{ form.children }}
+          {{ form.senior }}
+          {{ form.message }}
       </div>
-      <div class="col">
-        <a class="btn btn-success btn-block" href="{% url 'inquiry' %}">Rescuer</a>
-      </div>
-    </div>
-  </div>
-</div>
+    </form>
 
 </body>
 </html>
