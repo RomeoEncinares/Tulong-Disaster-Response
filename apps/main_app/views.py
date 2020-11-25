@@ -9,15 +9,13 @@ def index(request):
 
 def inquiry(request):
 
-    rescue = Rescuee.objects.all()
-
     form = RescueeForm()
 
     if request.method == 'POST':
         form = RescueeForm(request.POST)
         if form.is_valid():
-            form.save()
-        return redirect ('rescuee')
+            rescuee_instance = form.save()
+        return redirect ('rescuee', rescuee_instance.pk)
 
     context = {
         'form' : form
@@ -25,5 +23,5 @@ def inquiry(request):
 
     return render(request, "inquiry_page.html", context)
 
-def rescueeview(request):
-    return render(request, "rescuee_view.html")
+def rescueeview(request, pk):
+    return render(request, "rescuee_page.html")
