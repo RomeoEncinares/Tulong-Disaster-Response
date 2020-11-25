@@ -24,4 +24,14 @@ def inquiry(request):
     return render(request, "inquiry_page.html", context)
 
 def rescueeview(request, pk):
-    return render(request, "rescuee_page.html")
+
+    rescuee = Rescuee.objects.get(id=pk)
+
+    print(rescuee.name)
+    print(rescuee.disaster)
+
+    context = {
+    'rescuee' : rescuee,
+    }
+
+    return render(request, "rescuee_page.html", context)

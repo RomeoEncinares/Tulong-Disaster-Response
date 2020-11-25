@@ -1,12 +1,68 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <!-- CSS,JSS,BOOTSTRAP CDN only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/rescuee.css' %}">
+  <title>Tulong</title>
 </head>
 <body>
-<h1>success</h1>
+
+  <div class="signup-form">
+    <form method="POST">
+      {% csrf_token %}
+		<h2>Info</h2>
+		<p class="hint-text"> These are your Information </p>
+      <div class="form-group">
+
+        <div class="form-group">
+          <p> Name : {{ rescuee.name }}</p>
+        </div>
+
+        <div class="form-group">
+          <p> Type of Disaster : {{ rescuee.disaster }} </p>
+        </div>
+
+
+        <div class="form-group">
+          <p> Location : {{ rescuee.location }} </p>
+        </div>
+
+        <div class="form-group">
+          <p> Total Number of People : {{ rescuee.total }} </p>
+        </div>
+
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <p> Children : {{ rescuee.children }} </p>
+            </div>
+            <div class="col">
+              <p> Senior Citizens : {{ rescuee.senior }} </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p> Message : {{ rescuee.message }} </p>
+        </div>
+
+        <div class="form-group">
+          <p> Updates : {{ rescuee.message }} </p>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+              <button type="submit" class="btn btn-success btn-lg btn-block">Refresh</button>
+          </div>
+
+    </form>
+
 </body>
 </html>
