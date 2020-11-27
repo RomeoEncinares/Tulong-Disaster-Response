@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from .forms import *
 from .models import *
 
-
 def index(request):
     return  render(request, "landing_page.html")
 
@@ -27,9 +26,6 @@ def rescueeview(request, pk):
 
     rescuee = Rescuee.objects.get(id=pk)
 
-    print(rescuee.name)
-    print(rescuee.disaster)
-
     context = {
     'rescuee' : rescuee,
     }
@@ -39,9 +35,15 @@ def rescueeview(request, pk):
 def rescue_dashboard(request):
 
     all = Rescuee.objects.all()
+    going = Rescuee.objects.filter(status="Going")
+    waiting = Rescuee.objects.filter(status="Waiting")
+    print(waiting)
+    print(going)
 
     context = {
     'all' : all,
+    'going' : going,
+    'waiting' : waiting,
     }
 
     return render(request, "rescuers_page.html", context)

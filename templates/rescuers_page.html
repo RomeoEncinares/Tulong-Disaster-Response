@@ -71,8 +71,25 @@
           <h5>On Going Rescuee</h5>
           <hr>
           <div class="card card-body">
+            <table class="table table-sm">
+            <tr>
+              <th>Name</th>
+              <th>Disaster</th>
+              <th>Location</th>
+              <th>Total</th>
+            </tr>
 
+                {% for going in going %}
+            <tr>
+                <td>{{going.name}}</td>
+                <td>{{going.disaster}}</td>
+                <td>{{going.location}}</td>
+                <td>{{going.total}}</td>
+            </tr>
+                {% endfor %}
+            </table>
           </div>
+
         </div>
         <div class="col-md-7">
           <h5>Awaiting Rescuee</h5>
@@ -84,19 +101,20 @@
               <th>Disaster</th>
               <th>Location</th>
               <th>Total</th>
+              <th></th>
+              <th></th>
             </tr>
 
-                {% for all in all %}
+                {% for waiting in waiting %}
             <tr>
-              <td>{{all.name}}</td>
-              <td>{{all.disaster}}</td>
-              <td>{{all.location}}</td>
-              <td>{{all.total}}</td>
-              <td><a class="btn btn-info" href="">View</a></td>
-  						<td><a class="btn btn-success" href="">Update</a></td>
-
+                <td>{{waiting.name}}</td>
+                <td>{{waiting.disaster}}</td>
+                <td>{{waiting.location}}</td>
+                <td>{{waiting.total}}</td>
+                <td><a class="btn btn-info" href="">View</a></td>
+    						<td><a class="btn btn-success" href="">Update</a></td>
             </tr>
-                {% endfor %}
+              {% endfor %}
             </table>
           </div>
         </div>

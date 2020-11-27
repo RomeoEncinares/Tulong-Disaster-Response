@@ -8,6 +8,11 @@ class Rescuee(models.Model):
     children = models.IntegerField()
     senior = models.IntegerField()
     message = models.CharField(max_length=200)
+    status_choices = (
+    ('Waiting','Waiting for Rescuers'),
+    ('Going','Rescuers on the Way'),
+    )
+    status = models.CharField(max_length=30, choices=status_choices, blank=True, default=status_choices[0][0])
 
     def __str__(self):
         return self.name

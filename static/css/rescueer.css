@@ -1,6 +1,6 @@
 body {
 	color: 	#000000;
-	background: #63738a;
+	background: #ebeff5;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -10,4 +10,12 @@ body {
 
 .row .col .col-md {
 	padding : 20px;
+}
+
+#awaiting-rescue .card-header{
+	background: #dc3545;
+}
+
+#ongoing-rescue .card-header{
+	background: #28a745;
 }
