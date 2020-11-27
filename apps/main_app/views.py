@@ -35,3 +35,13 @@ def rescueeview(request, pk):
     }
 
     return render(request, "rescuee_page.html", context)
+
+def rescue_dashboard(request):
+
+    all = Rescuee.objects.all()
+
+    context = {
+    'all' : all,
+    }
+
+    return render(request, "rescuers_page.html", context)

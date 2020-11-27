@@ -1,0 +1,13 @@
+body {
+	color: 	#000000;
+	background: #63738a;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+
+}
+
+.row .col .col-md {
+	padding : 20px;
+}
