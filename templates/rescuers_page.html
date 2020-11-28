@@ -37,31 +37,28 @@
       <div class="row">
       	<div class="col">
       		<div class="col-md">
+      			<div class="card text-center text-dark mb-3" id="ongoing-rescue">
+      			  	<div class="card-header">
+      			  		<h5 class="card-title"> On Going Rescuee </h5>
+      			  	</div>
+      			  	<div class="card-body">
+      			    	<h3 class="card-title"> {{ goingcount }} </h3>
+      			  	</div>
+      			</div>
+      		</div>
+      	</div>
+        <div class="col">
+      		<div class="col-md">
       			<div class="card text-center text-dark mb-3" id="awaiting-rescue">
       			  	<div class="card-header">
       			  		<h5 class="card-title"> Awaiting Rescue </h5>
       			  	</div>
       			  	<div class="card-body">
-      			    	<h3 class="card-title"> 2 </h3>
+      			    	<h3 class="card-title"> {{ waitingcount }} </h3>
       			  	</div>
       			</div>
       		</div>
       	</div>
-
-  <!-- Overview -->
-
-    	<div class="col">
-    		<div class="col-md">
-    			<div class="card text-center text-dark mb-3" id="ongoing-rescue">
-    			  	<div class="card-header">
-    			  		<h5 class="card-title"> On Going Rescuee </h5>
-    			  	</div>
-    			  	<div class="card-body">
-    			    	<h3 class="card-title"> 1 </h3>
-    			  	</div>
-    			</div>
-    		</div>
-    	</div>
     </div>
 
   <!-- Dashboard -->
@@ -85,6 +82,7 @@
                 <td>{{going.disaster}}</td>
                 <td>{{going.location}}</td>
                 <td>{{going.total}}</td>
+                <td><a class="btn btn-info" href="{% url 'done_rescue' going.id %}"> Done </a></td>
             </tr>
                 {% endfor %}
             </table>
@@ -111,8 +109,7 @@
                 <td>{{waiting.disaster}}</td>
                 <td>{{waiting.location}}</td>
                 <td>{{waiting.total}}</td>
-                <td><a class="btn btn-info" href="">View</a></td>
-    						<td><a class="btn btn-success" href="">Update</a></td>
+                <td><a class="btn btn-info" href="{% url 'rescuee_info' waiting.id %}"> View </a></td>
             </tr>
               {% endfor %}
             </table>

@@ -37,13 +37,47 @@ def rescue_dashboard(request):
     all = Rescuee.objects.all()
     going = Rescuee.objects.filter(status="Going")
     waiting = Rescuee.objects.filter(status="Waiting")
-    print(waiting)
-    print(going)
+
+    goingcount = going.count()
+    waitingcount = waiting.count()
 
     context = {
     'all' : all,
     'going' : going,
     'waiting' : waiting,
+    'goingcount' : goingcount,
+    'waitingcount' : waitingcount,
     }
 
     return render(request, "rescuers_page.html", context)
+
+def rescuer_info(request, pk):
+
+    rescuee = Rescuee.objects.get(id=pk)
+    form = RescueeForm(instance=rescuee)
+
+    if request.method == 'POST':
+        form = RescueeForm(request.POST, request.FILES, instance=rescuee)
+        if form.is_valid():
+            form.save()
+        return redirect ('../')
+
+    context = {
+    'rescuee' : rescuee,
+    'form': form,
+    }
+
+    return render(request, "information-rescuer.html", context)
+
+def done_rescue(request, pk):
+    rescuee = Rescuee.objects.get(id=pk)
+
+    if request.method == 'POST':
+        rescuee.delete()
+        return redirect ('../')
+
+    context = {
+    'rescuee' : rescuee,
+    }
+
+    return render(request, "done-rescue.html", context)

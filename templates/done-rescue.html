@@ -7,24 +7,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- CSS,JSS,BOOTSTRAP CDN only -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/landing.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/rescuee.css' %}">
   <title>Tulong</title>
 </head>
 <body>
 
-<div class="container">
-  <div class="center-column">
-    <div class="item-row">
-      <div class="col">
-        <!-- <button type="button" " class="btn btn-danger mx-auto d-block btn-block">Rescuee</button> -->
-        <a class="btn btn-danger btn-block" href="{% url 'inquiry' %}">Rescuee</a>
+  <div class="signup-form">
+    <form method="POST">
+      {% csrf_token %}
+		<h2>Rescuee</h2>
+    <p class="hint-text"> Confirm {{ rescuee.name }}'s Rescuee? </p>
+
+      <div class="form-group">
+        <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" type="submit"> Submit </button>
+        </div>
+
+        </div>
+
       </div>
-      <div class="col">
-        <a class="btn btn-success btn-block" href="{% url 'rescuee_dashboard' %}">Rescuer</a>
-      </div>
-    </div>
-  </div>
-</div>
+    </form>
 
 </body>
 </html>
