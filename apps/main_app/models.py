@@ -6,7 +6,7 @@ class Rescuee(models.Model):
     location = models.CharField(blank=True, max_length=200)
     total = models.IntegerField(blank=True, )
     children = models.IntegerField(blank=True, )
-    senior = models.IntegerField()
+    senior = models.IntegerField(blank=True, )
     message = models.CharField(blank=True, max_length=200)
     status_choices = (
     ('Waiting','Waiting for Rescuers'),

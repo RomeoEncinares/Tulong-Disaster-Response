@@ -1,13 +1,17 @@
 body {
 	color: #000000;
-	background: #63738a;
-	font-family: 'Roboto', sans-serif;
+	background: #1e2635;
+	font-family: 'Verdana', sans-serif;
+}
+
+body p {
+	font-size: 1.15em;
 }
 
 .form-control {
 	height: 40px;
 	box-shadow: none;
-	color: #969fa4;
+	color: #000000;
 }
 
 .form-control, .btn {

@@ -4,6 +4,15 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+.navbar {
+	background: #1e2635;
+}
+
+#navbar img {
+	max-width: 5%;
+	max-height: 5%;
+}
+
 .container {
 
 }

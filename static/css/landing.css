@@ -1,7 +1,73 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   margin: 0;
-  background: #ebeff5;
+  padding: 0;
+  background: #1e2635;
+  margin-bottom: 60px;
+  font-family: 'Verdana', sans-serif;
 }
+
+.container .logo {
+  display: flex;
+  justify-content: center;
+}
+
+.container .logo img {
+  animation: Slide_Right 1.3s;
+  max-width: 10%;
+  max-height: 10%;
+}
+
+.container .logo h1 {
+  animation: Slide_Left 1.3s;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.container #text {
+  animation: Slide_Up 1.5s;
+}
+
+.container #text p {
+  animation: Slide_Up 1.5s;
+  font-size: 30px;
+}
+
+.container #show-button {
+  animation: Slide_Up 1.5s;
+}
+
+@keyframes Slide_Left {
+  0% {
+    transform:translate(300px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes Slide_Right {
+  0% {
+    transform:translate(-300px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes Slide_Up {
+  0% {
+    transform:translate(0,120px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
 .container {
     padding: 0;
     margin: 0;
@@ -11,13 +77,16 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     align-items: center;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
     /* background: #16a085; */
 }
 
 .center-column{
   width:600px;
   margin: 20px auto;
-  padding:20px;
+  padding: 20px;
   border-radius: 3px;
   /* background-color: #747474; */
   /* box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75); */
@@ -28,13 +97,20 @@ body {
 }
 
 .btn-lg {
-    padding: 10px 20px;
-    font-size: 20px;
-    border-radius: 10px;
+  padding: 15px 10px;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
-.btn-block {
-  padding: 20px 30px;
-  font-size: 30px;
-  border-radius: 10px;
+.btn:hover{
+  transform: scale(1.2);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Set the fixed height of the footer here */
+  line-height: 50px; /* Vertically center the text there */
+  background-color: #f5f5f5;
 }
