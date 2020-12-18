@@ -16,4 +16,4 @@ $ python manage.py runserver
 
 ```
 
-Then visit `http://localhost:8000` to view the app:
+Then visit `http://127.0.0.1:8000/` to view the app:
