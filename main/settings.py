@@ -26,7 +26,7 @@ SECRET_KEY = 'q2a0_$kciid+z5a=-thm&c*1$-o3zeh*j0p-cr$hrw)1n&a%_('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tulong-disaster-response.herokuapp.com']
+ALLOWED_HOSTS = ['tulong-disaster-response.herokuapp.com','127.0.0.1']
 
 
 # Application definition
